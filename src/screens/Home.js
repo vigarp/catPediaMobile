@@ -75,7 +75,18 @@ const Home = () => {
             data={allDataCats?.data}
             keyExtractor={(item, index) => index}
             renderItem={({item, index}) => (
-              <Accordion title={item.name} key={index} />
+              <Accordion
+                image={item?.reference_image_id}
+                title={item?.name}
+                origin={item?.origin}
+                lifeSpan={item?.life_span}
+                temperament={item?.temperament}
+                description={item?.description}
+                weightImperial={item?.weight?.imperial}
+                weightMetric={item?.weight?.metric}
+                wikipediaURL={item?.wikipedia_url}
+                key={index}
+              />
             )}
             ListHeaderComponent={renderHeader}
             ListFooterComponent={renderFooter}
